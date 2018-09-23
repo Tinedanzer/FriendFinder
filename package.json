@@ -1,0 +1,30 @@
+{
+  "name": "friendfinder",
+  "version": "1.0.0",
+  "description": "Find yo friends on this App hosted by Heroku",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "watch": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tinedanzer/FriendFinder.git"
+  },
+  "keywords": [
+    "node.js",
+    "express",
+    "heroku"
+  ],
+  "author": "John Hill",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tinedanzer/FriendFinder/issues"
+  },
+  "homepage": "https://github.com/Tinedanzer/FriendFinder#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3"
+  }
+}
