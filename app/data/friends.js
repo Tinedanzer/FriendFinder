@@ -1,4 +1,4 @@
-module.exports=[
+module.exports= ultFriends=[
   {
     "name":"Surprise Bear",
     "photo":"https://vignette.wikia.nocookie.net/carebears/images/9/96/Surprise_Bear.jpg/revision/latest?cb=20120405173349",
