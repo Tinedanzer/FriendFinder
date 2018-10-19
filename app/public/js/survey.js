@@ -1,7 +1,7 @@
 $("#submit").on("click", function (event) {
     event.preventDefault();
-
     console.log("button clicked");
+    
     const friendsMag = {
       name: $("#name").val(),
       photo: $("#photo").val(),
