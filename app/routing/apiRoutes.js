@@ -13,36 +13,37 @@ module.exports = function(app){
     // req.body hosts is equal to the JSON post sent from the user
     // This works because of our body-parser and express middleware
     let newFriend = request.body;
-    
+    let newFriend2= request.body.scores;
+      console.log(newFriend2);
     // Using a RegEx Pattern to remove spaces from newFriend
     // You can read more about RegEx Patterns at https://www.regexbuddy.com/regex.html
     newFriend.name = newFriend.name.replace(/\s+/g, "").toLowerCase();
     console.log(newFriend); 
-// pushes the values submitted to the friends.js file to save a new friend!
-    ultFriends.push(newFriend);
-    // res.json(newFriend);
     // to decide who  your match is, and then displays the results via res.json.
        //matching friends
        let match = "";
        let matchImage = "";
-       let total = 100;
-   
+       let totalDifference = 25;
+       
        for (let i = 0; i < ultFriends.length; i++) {
     
          let diff = 0;
    
-         for (let x in newFriend.scores) {
-           let currentInfo = parseInt(ultFriends[i].scores);
-           let newInfo = parseInt(newFriend.scores[x]);
-           diff = Math.abs(currentInfo - newInfo);
-         };
-         if (diff < total) {
-           total = diff;
+         for (let x = 0; x < newFriend2.length; x++) {
+          diff += Math.abs(ultFriends[i].scores[x] - newFriend2[x]);
+        }
+
+
+         if (diff < totalDifference) {
+           totalDifference = diff;
            match = ultFriends[i].name;
            matchImage = ultFriends[i].photo;
          }
        }
        //returning response
        response.json({ match: match, matchImage: matchImage });
+       // pushes the values submitted to the friends.js file to save a new friend!
+      //  we  do this last because  we dont  want you to match with yourself:-) How lonely!
+    ultFriends.push(newFriend);
   });
 }
