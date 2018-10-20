@@ -10,7 +10,7 @@ let PORT = process.env.PORT || 8069;
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
-
+// require api routes first to get the data
 require('./app/routing/apiRoutes.js')(app);
 require('./app/routing/htmlRoutes.js')(app);
 
