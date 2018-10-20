@@ -28,12 +28,15 @@ module.exports = function(app){
        for (let i = 0; i < ultFriends.length; i++) {
     
          let diff = 0;
-   
+  //  each i sets 'diff' to an additive value determined by the below equation
+  // which is later compared to a  constantly  updated totalDifference
          for (let x = 0; x < newFriend2.length; x++) {
           diff += Math.abs(ultFriends[i].scores[x] - newFriend2[x]);
         }
 
-
+        // this is fun! totalDifference is updated each time i is passed through that
+        // has a lower absolute value  from the difference in the above equation.
+        
          if (diff < totalDifference) {
            totalDifference = diff;
            match = ultFriends[i].name;
