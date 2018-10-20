@@ -33,10 +33,8 @@ module.exports = function(app){
          for (let x = 0; x < newFriend2.length; x++) {
           diff += Math.abs(ultFriends[i].scores[x] - newFriend2[x]);
         }
-
         // this is fun! totalDifference is updated each time i is passed through that
-        // has a lower absolute value  from the difference in the above equation.
-        
+        // has a lower absolute value  from the difference in the above equation.      
          if (diff < totalDifference) {
            totalDifference = diff;
            match = ultFriends[i].name;
